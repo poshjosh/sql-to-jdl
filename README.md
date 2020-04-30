@@ -23,6 +23,30 @@ Set properties file:
 - Tables names to be ignored
 - Path of export file
 
+Particularly:
+
+- In `application.yml` set the following:
+```yml
+spring:
+    datasource:
+            type: com.zaxxer.hikari.HikariDataSource
+            url: jdbc:mysql://localhost:3306/[PUT DATABASE NAME HERE]?useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=UTC
+            username: root
+            password: [PUT DATABASE PASSWORD HERE]
+
+application:
+    database-to-export: <PUT DATABASE NAME HERE>
+```
+
+In pom.xml
+```xml
+<project>
+    <properties>
+        <database.url>jdbc:mysql://localhost:3306/[PUT DATABASE NAME HERE]?serverTimezone=UTC</database.url>
+        <database.user>root</database.user>
+        <database.password>[PUT DATABASE PASSWORD HERE]</database.password>
+```
+
 # After JDL file is generated
 Still have some manual steps to do:
 - review relations:
