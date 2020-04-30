@@ -1,3 +1,9 @@
+# Generated output
+*.jh
+
+# NetBeans related
+nbactions.xml
+
 ######################
 # Project Specific
 ######################
